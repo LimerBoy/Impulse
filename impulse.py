@@ -58,7 +58,7 @@ def main():
 		MEMCACHED_ATTACK(threads, time, target)
 
 	elif method == "SMS":
-		from tools.SMD.main import SMS_ATTACK
+		from tools.SMS.main import SMS_ATTACK
 		SMS_ATTACK(threads, time, target)
 
 	else:

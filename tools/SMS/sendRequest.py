@@ -1,6 +1,6 @@
 import json
 import requests
-import tools.sms.randomData as randomData
+import tools.SMS.randomData as randomData
 
 # Read services file
 def getServices(file = 'tools/sms/services.json'):

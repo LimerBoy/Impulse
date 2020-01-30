@@ -10,8 +10,7 @@ def POD_ATTACK(threads, attack_time, target):
 	global FINISH
 	FINISH = False
 
-	target_ip = target.split(":")[0]
-	#target_port = int(target.split(":")[1])
+	target_ip = target
 
 	print("[#] Attack started for " + str(attack_time) + " secounds..")
 	
