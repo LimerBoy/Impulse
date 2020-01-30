@@ -20,7 +20,7 @@ def random_service(list):
 
 # Create random name
 def random_name():
-    with open("tools/sms/names.json", 'r') as names:
+    with open("tools/SMS/names.json", 'r') as names:
         names = json.load(names)["names"]
     return random.choice(names)
 
@@ -45,6 +45,6 @@ def random_password():
 
 # Get random user agent
 def random_useragent():
-    with open("tools/sms/user_agents.json", 'r') as agents:
+    with open("tools/SMS/user_agents.json", 'r') as agents:
         user_agents = json.load(agents)["agents"]
     return random.choice(user_agents)
