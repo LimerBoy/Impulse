@@ -1,0 +1,5 @@
+phonenumbers
+requests
+scapy
+wget
+argparse
