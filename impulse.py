@@ -1,13 +1,14 @@
 # Created by LimerBoy
 import argparse
 import tools.addons.clean
-import tools.addons.update
+import tools.addons.logo
 import tools.addons.winpcap
+import tools.addons.update
 
 def main():
 
 	# Parse args
-	parser = argparse.ArgumentParser(description = "Impulse Denial-of-service ToolKit")
+	parser = argparse.ArgumentParser(description = "Denial-of-service ToolKit")
 	parser.add_argument("--target", type = str, metavar = "<IP:PORT, URL, PHONE>",
 					help = "Target ip:port, url or phone")
 	parser.add_argument("--method", type = str, metavar = "<NTP/TCP/UDP/SYN/POD/SLOWLORIS/MEMCACHED/HTTP/SMS>",
