@@ -3,12 +3,12 @@ import requests
 import tools.SMS.randomData as randomData
 
 # Read services file
-def getServices(file = 'tools/sms/services.json'):
+def getServices(file = 'tools/SMS/services.json'):
     with open(file, 'r') as services:
         return json.load(services)["services"]
 
 # Read proxy list
-def getProxys(file = 'tools/sms/proxy.json'):
+def getProxys(file = 'tools/SMS/proxy.json'):
     with open(file, 'r') as proxys:
         return json.load(proxys)["proxy"]
 
