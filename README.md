@@ -1,8 +1,15 @@
-# Impulse
+# Impulse BETA!
 > Simple Denial-of-service ToolKit
 
-* [All methods](#methods)
-* [Example (SMS Flood)](#example-sms--call-flood)
+
+<p align="center">
+  <img src="https://i.ibb.co/rFct6QX/LOGO.png">
+</p>
+
+
+* Links:
+  * [All methods](#methods)
+  * [Example (SMS Flood)](#example-sms--call-flood)
 
 # Main window
 ![MAIN-WINDOW](https://i.ibb.co/JK50vDR/MAIN.png)
@@ -22,5 +29,6 @@
 
 
 # Example SMS & Call flood:
-`python impulse.py --method SMS --target +XXXXXXXXXXXX --time 20 --threads 2`
+```python impulse.py --method SMS --target +XXXXXXXXXXXX --time 20 --threads 2```
+
 ![SMS-DDOS](https://i.ibb.co/yXSSF7R/SMS.png)
