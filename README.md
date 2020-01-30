@@ -34,6 +34,7 @@ cd Impulse/
 pip install -r requirements.txt
 python impulse.py
 ```
+### Or download compiled (.exe) from [here](https://anonfile.com/d4TcY3R7n7/impulse_exe)
 
 
 # Example SMS & Call flood:
