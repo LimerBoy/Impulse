@@ -2,9 +2,9 @@
 > Simple Denial-of-service ToolKit
 
 * [All methods](#methods)
-* [Example (SMS Flood)](#example-sms)
+* [Example (SMS Flood)](#example-sms--call-flood)
 
-# Main
+# Main window
 ![MAIN-WINDOW](https://i.ibb.co/JK50vDR/MAIN.png)
 
 # Methods:
