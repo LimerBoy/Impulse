@@ -1,5 +1,6 @@
 import json
 import requests
+import tools.SMS.numberTools as numberTools
 import tools.SMS.randomData as randomData
 
 # Read services file
@@ -47,6 +48,7 @@ class Service:
         for old, new in {
             "\'": "\"",
             "%phone%": phone,
+            "%phone5%": numberTools.transformPhone(phone, 5),
             "%name%":  randomData.random_name(),
             "%email%": randomData.random_email(),
             "%password%": randomData.random_password()

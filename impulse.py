@@ -1,9 +1,9 @@
 # Created by LimerBoy
 import argparse
-import tools.addons.clean
-import tools.addons.logo
-import tools.addons.winpcap
 import tools.addons.update
+import tools.addons.clean
+import tools.addons.winpcap
+import tools.addons.logo
 
 def main():
 
@@ -11,7 +11,7 @@ def main():
 	parser = argparse.ArgumentParser(description = "Denial-of-service ToolKit")
 	parser.add_argument("--target", type = str, metavar = "<IP:PORT, URL, PHONE>",
 					help = "Target ip:port, url or phone")
-	parser.add_argument("--method", type = str, metavar = "<NTP/TCP/UDP/SYN/POD/SLOWLORIS/MEMCACHED/HTTP/SMS>",
+	parser.add_argument("--method", type = str, metavar = "<SMS/NTP/TCP/UDP/SYN/POD/SLOWLORIS/MEMCACHED/HTTP/NJRAT>",
 					help = "Attack method")
 	parser.add_argument("--time", type = int, default = 10, metavar = "<time>",
 					help = 'time in secounds')
@@ -40,6 +40,10 @@ def main():
 	elif method == "POD":
 		from tools.L4.pod import POD_ATTACK
 		POD_ATTACK(threads, time, target)
+
+	elif method == "NJRAT":
+		from tools.L4.njrat import NJRAT_ATTACK
+		NJRAT_ATTACK(threads, time, target)
 
 	elif method == "UDP":
 		from tools.L4.udp import UDP_ATTACK

@@ -1,8 +1,24 @@
 {
 	"services": [
 		{
+			"url": "https://pizzahut.ru/account/password-reset",
+			"data": "{'reset_by':'phone', 'action_id':'pass-recovery', 'phone': '%phone5%', '_token':'*'}"
+		},
+		{
+			"url": "https://www.rabota.ru/remind",
+			"data": "{'credential': '%phone%'}"
+		},
+		{
 			"url": "https://comfy.ua/ua/customer/account/createPost",
 			"data": "{'registration_name':'%name%','registration_phone':'%phone%','registration_email':'%email%'}"
+		},
+		{
+			"url": "https://rutube.ru/api/accounts/sendpass/phone",
+			"data": "{'phone': '+%phone%'}"
+		},
+		{
+			"url": "https://allo.ua/ua/customer/account/createPostVue/?currentTheme=main&currentLocale=uk_UA",
+			"data": "{'firstname':'%name%', 'telephone':'%phone%', 'email':'%email%','password':'%password%','form_key':'Zqqj7CyjkKG2ImM8'}"
 		},
 		{
 			"url": "https://www.citilink.ru/registration/confirm/phone/+%phone%/"
@@ -11,8 +27,18 @@
 			"url": "https://www.sportmaster.ua/?module=users&action=SendSMSReg&phone=+%phone%"
 		},
 		{
+			"url": "https://www.oyorooms.com/api/pwa/generateotp?phone=+%phone%&country_code=%2B7&nod=4&locale=en"
+		},
+		{
+			"url": "https://secure.online.ua/ajax/check_phone/?reg_phone=%phone%"
+		},
+		{
 			"url": "https://pampik.com/callback",
 			"data": "{'phoneCallback':'%phone%'}"
+		},
+		{
+			"url": "https://mobileplanet.ua/register",
+			"data": "{'klient_name':'%name%','klient_phone':'+%phone%','klient_email':'%email%'}"
 		},
 		{
 			"url": "https://app.cloudloyalty.ru/demo/send-code",
@@ -51,12 +77,12 @@
 			"data": "{'phone_number': '%phone%'}"
 		},
 		{
-			"url": "https://app.karusel.ru/api/v1/phone/",
+			"url": "https://api.tinkoff.ru/v1/sign_up",
 			"data": "{'phone': '%phone%'}"
 		},
 		{
-			"url": "https://api.tinkoff.ru/v1/sign_up",
-			"data": "{'phone': '%phone%'}"
+			"url": "https://my.citrus.ua/api/v2/register",
+			"data": "{'email':'%email%','name':'%name%','phone':'%phone%','password':'!@#qwe','confirm_passwor':'!@#qwe'}"
 		},
 		{
 			"url": "https://youla.ru/web-api/auth/request_code",

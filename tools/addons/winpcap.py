@@ -10,3 +10,5 @@ if platform.system() == "Windows":
 		if input(" >>> ").lower() in ("y", "yes", "1"):
 			winpcap_installer = wget.download(winpcap_url)
 			os.startfile(winpcap_installer)
+			print("Please restart program")
+			exit()
