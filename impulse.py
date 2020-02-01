@@ -1,9 +1,12 @@
 # Created by LimerBoy
 import argparse
-import tools.addons.update
-import tools.addons.clean
-import tools.addons.winpcap
-import tools.addons.logo
+try:
+	import tools.addons.update
+	import tools.addons.clean
+	import tools.addons.winpcap
+	import tools.addons.logo
+except ImportError:
+	print("Failed import some modules")
 
 def main():
 
