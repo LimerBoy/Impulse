@@ -29,13 +29,20 @@
 | Memcached            | IP:PORT    | A memcached distributed denial-of-service (DDoS) attack is a type of cyber attack in which an attacker attempts to overload a targeted victim with internet traffic. The attacker spoofs requests to a vulnerable UDP memcached* server, which then floods a targeted victim with internet traffic, potentially overwhelming the victim’s resources. While the target’s internet infrastructure is overloaded, new requests cannot be processed and regular traffic is unable to access the internet resource, resulting in denial-of-service. |
 
 # Installation:
-```
-cd Impulse/
-pip install -r requirements.txt
-python impulse.py
-```
-### Or download compiled (.exe) from [here](https://anonfile.com/d4TcY3R7n7/impulse_exe)
+* Windows:
+  * Download Python 3.6 from [here](https://www.python.org/downloads/release/python-360/)
+  * Launch installer, click `add python to PATH`
+  * Download Impulse
+  * Open cmd or powershell in Impulse directory
+  * Run this command: `pip install -r requirements.txt`
+  * And this: `python impulse.py --help`
 
+* Linux/Termux:
+  * `sudo apt install python3 python3-pip`
+  * `git clone https://github.com/LimerBoy/Impulse`
+  * `cd Impulse/`
+  * `pip3 install -r requirements.txt`
+  * `python impulse.py --help`
 
 # Example SMS & Call flood:
 ```python impulse.py --method SMS --target +XXXXXXXXXXXX --time 20 --threads 2```
