@@ -38,10 +38,10 @@
   * And this: `python impulse.py --help`
 
 * Linux/Termux:
-  * `sudo apt install python3 python3-pip`
+  * `sudo apt install python python-pip git -y`
   * `git clone https://github.com/LimerBoy/Impulse`
   * `cd Impulse/`
-  * `pip3 install -r requirements.txt`
+  * `pip install -r requirements.txt`
   * `python impulse.py --help`
 
 # Example SMS & Call flood:
