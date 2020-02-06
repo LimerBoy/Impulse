@@ -38,6 +38,7 @@
   * And this: `python impulse.py --help`
 
 * Linux/Termux:
+  * `sudo apt update`
   * `sudo apt install python python-pip git -y`
   * `git clone https://github.com/LimerBoy/Impulse`
   * `cd Impulse/`
