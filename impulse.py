@@ -1,7 +1,6 @@
 # Created by LimerBoy
 import argparse
 try:
-	import tools.addons.update
 	import tools.addons.clean
 	import tools.addons.winpcap
 	import tools.addons.logo
