@@ -37,8 +37,32 @@
 			"data": "{'phoneCallback':'%phone%'}"
 		},
 		{
+			"url": "https://junker.kiev.ua/postmaster.php",
+			"data": "{'tel':'%phone%','name':'%name%','action':'callme'}"
+		},
+		{
+			"url": "https://www.pestocafe.ua/apply-form/callback",
+			"data": "{'name':'%name%','phone':'%phone%','_token':'%token%'}"
+		},
+		{
 			"url": "https://mobileplanet.ua/register",
 			"data": "{'klient_name':'%name%','klient_phone':'+%phone%','klient_email':'%email%'}"
+		},
+		{
+			"url": "https://mobileplanet.ua/new_record",
+			"data": "{'klient_name':'%name%','klient_phone':'+%phone%','object': 'callback','this_page_url':'https://mobileplanet.ua/telefony-349'}"
+		},
+		{
+			"url": "http://www.advice.in.ua/vasha-zayavka-prinyata.html/",
+			"data": "{'fio':'%name%','tel':'%phone%','type':'2','capch':'4','mod':'1'}"
+		},
+		{
+			"url": "https://holdyou.net/api/callback",
+			"data": "{'name':'%name%','phone':'%phone%'}"
+		},
+		{
+			"url": "https://doc.ua/main/callbackrequest",
+			"data": "{'crm_models_SupportRequest[user_name]':'%name%','crm_models_SupportRequest[user_phone]':'%phone%', 'crm_models_SupportRequest[link]':'https://doc.ua/doctors/kiev/all/psiholog'}"
 		},
 		{
 			"url": "https://app.cloudloyalty.ru/demo/send-code",
