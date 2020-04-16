@@ -14,5 +14,10 @@ def transformPhone(phone, i):
 
 # Get country name by phone
 def getCountry(phone):
-	query = parse("+" + phone, None)
-	return repr(geocoder.description_for_number(query, 'en'))
+	try:
+		query = parse("+" + phone, None)
+		country = repr(geocoder.description_for_number(query, 'en'))
+	except:
+		country = "Unknown"
+		
+	return  country
