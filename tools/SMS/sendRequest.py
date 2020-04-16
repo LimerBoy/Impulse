@@ -29,19 +29,15 @@ class Service:
     def parseData(self, phone):
         payload = None
         # Check for 'data'
-        try:
+        if "data" in self.service:
             dataType = "data"
             payload = self.service["data"]
-        except KeyError:
-            pass
         # Check for 'json'
-        try:
-            dataType = "json"
+        elif "json" in self.service:
+            dataType = "data"
             payload = self.service["json"]
-        except KeyError:
-            pass
-        # If payload is clean
-        if not payload:
+        # Check for 'url'
+        else:
             payload = json.dumps({"url": self.service["url"]})
             dataType = "url"
         # Replace %phone%, etc.. to data
@@ -51,7 +47,8 @@ class Service:
             "%phone5%": numberTools.transformPhone(phone, 5),
             "%name%":  randomData.random_name(),
             "%email%": randomData.random_email(),
-            "%password%": randomData.random_password()
+            "%password%": randomData.random_password(),
+            "%token%": randomData.random_token()
             }.items():
             payload = payload.replace(old, new)
         return (json.loads(payload), dataType)
@@ -73,11 +70,8 @@ class Service:
             }
 
         # Add custom headers
-        try:
+        if "headers" in self.service:
             customHeaders = self.service["headers"]
-        except KeyError:
-            pass
-        else:
             for key, value in json.loads(customHeaders.replace("\'", "\"")).items():
                 headers[key] = value
 
