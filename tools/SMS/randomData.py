@@ -1,5 +1,6 @@
 import json
 import random
+import string
 
 mails = (
     "mail.ru",
@@ -42,6 +43,13 @@ def random_email():
 # %random_name%%random_suffix%
 def random_password():
     return random_name() + random_suffix(int_range = 10)
+
+
+# Create random token
+# %token%
+def random_token():
+    letters = string.ascii_letters + string.digits
+    return ''.join(random.choice(letters) for _ in range(random.randint(20, 50)))
 
 # Get random user agent
 def random_useragent():
