@@ -4,12 +4,12 @@ import tools.SMS.numberTools as numberTools
 import tools.SMS.randomData as randomData
 
 # Read services file
-def getServices(file = 'tools/SMS/services.json'):
+def getServices(file='tools/SMS/services.json'):
     with open(file, 'r') as services:
         return json.load(services)["services"]
 
 # Read proxy list
-def getProxys(file = 'tools/SMS/proxy.json'):
+def getProxys(file='tools/SMS/proxy.json'):
     with open(file, 'r') as proxys:
         return json.load(proxys)["proxy"]
 
@@ -42,17 +42,17 @@ class Service:
             dataType = "url"
         # Replace %phone%, etc.. to data
         for old, new in {
-            "\'": "\"",
-            "%phone%": phone,
-            "%phone5%": numberTools.transformPhone(phone, 5),
-            "%name%":  randomData.random_name(),
-            "%email%": randomData.random_email(),
-            "%password%": randomData.random_password(),
-            "%token%": randomData.random_token()
+                "\'": "\"",
+                "%phone%": phone,
+                "%phone5%": numberTools.transformPhone(phone, 5),
+                "%name%":  randomData.random_name(),
+                "%email%": randomData.random_email(),
+                "%password%": randomData.random_password(),
+                "%token%": randomData.random_token()
             }.items():
             payload = payload.replace(old, new)
         return (json.loads(payload), dataType)
-    
+
     # Send message
     def sendMessage(self, phone):
         url = self.service["url"]
@@ -76,18 +76,18 @@ class Service:
                 headers[key] = value
 
         # Create suffixes
-        okay  = " Service (" + getDomain(url) + ") >> Message sent!"
+        okay = " Service (" + getDomain(url) + ") >> Message sent!"
         error = " Service (" + getDomain(url) + ") >> Failed to sent message!"
 
         try:
             # If data type is 'json'
             if dataType == "json":
-                r = requests.post(url, json = payload, timeout = self.timeout, headers = headers, proxies = self.proxy)
+                r = requests.post(url, json=payload, timeout=self.timeout, headers=headers, proxies=self.proxy)
             # If data type is 'data'
             elif dataType == "data":
-                r = requests.post(url, data = payload, timeout = self.timeout, headers = headers, proxies = self.proxy)
+                r = requests.post(url, data=payload, timeout=self.timeout, headers=headers, proxies=self.proxy)
             elif dataType == "url":
-                r = requests.post(payload["url"], timeout = self.timeout, headers = headers, proxies = self.proxy)
+                r = requests.post(payload["url"], timeout=self.timeout, headers=headers, proxies=self.proxy)
 
             # Check status
             if r.status_code == 200:
