@@ -5,7 +5,7 @@ import random
 def random_IP():
     ip = []
     for _ in range(0, 4):
-        ip.append(str(random.randint(1,255)))
+        ip.append(str(random.randint(1, 255)))
     return ".".join(ip)
 
 # Get random referer
