@@ -33,11 +33,11 @@
 
 * Linux/Termux:
   * `sudo apt update`
-  * `sudo apt install python python-pip git -y`
+  * `sudo apt install python3 python3-pip git -y`
   * `git clone https://github.com/LimerBoy/Impulse`
   * `cd Impulse/`
   * `pip install -r requirements.txt`
-  * `python impulse.py --help`
+  * `python3 impulse.py --help`
 
 # :phone: Example SMS & Call flood:
 ```python impulse.py --method SMS --target +XXXXXXXXXXXX --time 20 --threads 2```
