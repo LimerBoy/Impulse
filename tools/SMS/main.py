@@ -29,7 +29,6 @@ def SMS_ATTACK(threads, attack_time, phone):
 
     # Start threads
     for thread in range(threads):
-        print(threads)
         print("[#] Staring thread " + str(thread))
         t = Thread(target=sms_flood)
         t.start()
