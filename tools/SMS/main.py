@@ -29,18 +29,21 @@ def SMS_ATTACK(threads, attack_time, phone):
 
     # Start threads
     for thread in range(threads):
+        print(threads)
         print("[#] Staring thread " + str(thread))
         t = Thread(target=sms_flood)
         t.start()
         threads_list.append(t)
-        # Sleep selected secounds
-        try:
-            time.sleep(attack_time)
-        except KeyboardInterrupt:
-            FINISH = True
-        # Terminate threads
-        for thread in threads_list:
-            FINISH = True
-            thread.join()
+        
+    # Sleep selected secounds
+    try:
+        time.sleep(attack_time)
+    except KeyboardInterrupt:
+        FINISH = True
 
-        print("[!] Attack stopped!")
+    # Terminate threads
+    for thread in threads_list:
+        FINISH = True
+        thread.join()
+
+    print("[!] Attack stopped!")
