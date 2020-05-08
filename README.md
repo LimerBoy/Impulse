@@ -36,10 +36,10 @@
   * `sudo apt install python3 python3-pip git -y`
   * `git clone https://github.com/LimerBoy/Impulse`
   * `cd Impulse/`
-  * `pip install -r requirements.txt`
+  * `pip3 install -r requirements.txt`
   * `python3 impulse.py --help`
 
 # :phone: Example SMS & Call flood:
-```python impulse.py --method SMS --target +XXXXXXXXXXXX --time 20 --threads 2```
+```python3 impulse.py --method SMS --target +XXXXXXXXXXXX --time 20 --threads 2```
 
 ![SMS-DDOS](https://i.ibb.co/yXSSF7R/SMS.png)
