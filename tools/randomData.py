@@ -1,6 +1,7 @@
 import json
 import random
 
+
 # Get random IP
 def random_IP():
     ip = []
@@ -8,11 +9,13 @@ def random_IP():
         ip.append(str(random.randint(1, 255)))
     return ".".join(ip)
 
+
 # Get random referer
 def random_referer():
     with open("tools/L7/referers.txt", 'r') as referers:
-    	referers = referers.readlines()
+        referers = referers.readlines()
     return random.choice(referers)
+
 
 # Get random user agent
 def random_useragent():

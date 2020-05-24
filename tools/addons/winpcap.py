@@ -1,9 +1,10 @@
+
+# Import modules
 import os
 import sys
-import platform
 import wget
 
-if platform.system() == "Windows":
+if os.name == "nt":
     winpcap_url = "https://www.winpcap.org/install/bin/WinPcap_4_1_3.exe"
     winpcap_dir = os.environ["ProgramFiles(x86)"] + "\\WinPcap"
     if not os.path.exists(winpcap_dir):
@@ -13,4 +14,4 @@ if platform.system() == "Windows":
             winpcap_installer = wget.download(winpcap_url)
             os.startfile(winpcap_installer)
             print("\n\n[?] Now please restart program")
-            sys.exit()
+            sys.exit(0)
