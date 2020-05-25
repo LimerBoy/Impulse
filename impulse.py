@@ -28,7 +28,7 @@ parser.add_argument(
 parser.add_argument(
     "--method",
     type=str,
-    metavar="<SMS/NTP/UDP/SYN/ICMP/POD/SLOWLORIS/MEMCACHED/HTTP>",
+    metavar="<SMS/EMAIL/NTP/UDP/SYN/ICMP/POD/SLOWLORIS/MEMCACHED/HTTP>",
     help="Attack method",
 )
 parser.add_argument(

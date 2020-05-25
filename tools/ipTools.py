@@ -4,6 +4,7 @@ import socket
 import ipaddress
 import requests
 from urllib.parse import urlparse
+from tools.EMAIL.emailTools import ReadSenderEmail
 from time import sleep
 from colorama import Fore
 
@@ -50,6 +51,15 @@ def __GetURLInfo(target):
     return target
 
 
+""" Get target, subject, body """
+
+
+def __GetEmailMessage():
+    server, username = ReadSenderEmail()
+    subject = input(f"{Fore.BLUE}[?] {Fore.MAGENTA}Enter the Subject (leave blank for random value): ")
+    body = input(f"{Fore.BLUE}[?] {Fore.MAGENTA}Enter Your Message (leave blank for random value): ")
+    return [server, username, subject, body]
+
 """ Return target """
 
 
@@ -58,6 +68,10 @@ def GetTargetAddress(target, method):
         if target.startswith("+"):
             target = target[1:]
         return target
+    elif method == "EMAIL":
+        email = __GetEmailMessage()
+        email.append(target)
+        return email
     elif method in (
         "SYN",
         "UDP",

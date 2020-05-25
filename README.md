@@ -15,6 +15,7 @@
 | Method               |   Target   | Description |
 | ---------------------| -----------|-------------|
 | SMS                  | PHONE     | Sends a massive amount of SMS messages and calls to a single target |
+| EMAIL                | EMAIL     | Sends a massive amount of Email messages to a target |
 | NTP                  | IP:PORT    | NTP amplification is a type of Distributed Denial of Service (DDoS) attack in which the attacker exploits publically-accessible Network Time Protocol (NTP) servers to overwhelm the targeted with User Datagram Protocol (UDP) traffic. |
 | SYN                  | IP:PORT    | A SYN flood (half-open attack) is a type of denial-of-service (DDoS) attack which aims to make a server unavailable to legitimate traffic by consuming all available server resources. |
 | UDP                  | IP:PORT    | A UDP flood is a type of denial-of-service attack in which a large number of User Datagram Protocol (UDP) packets are sent to a targeted server with the aim of overwhelming that device’s ability to process and respond. The firewall protecting the targeted server can also become exhausted as a result of UDP flooding, resulting in a denial-of-service to legitimate traffic. |
