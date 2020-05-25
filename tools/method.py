@@ -24,6 +24,7 @@ def GetMethodByName(method):
     else:
         CriticalError(f"Method 'flood' not found in {repr(dir)}. Please use python 3.8", '-')
 
+
 """ Class to control attack methods """
 class AttackMethod:
 
@@ -51,6 +52,8 @@ class AttackMethod:
     def __RunTimer(self):
         __stopTime = time() + self.duration
         while time() < __stopTime:
+            if not self.is_running:
+                return
             sleep(1)
         self.is_running = False
 
@@ -69,7 +72,7 @@ class AttackMethod:
             thread = Thread(target=self.__RunFlood)
             self.threads.append(thread)
         # Start flood threads
-        with Spinner(label=f"{Fore.YELLOW}Starting threads{Fore.RESET}", total=100) as spinner:
+        with Spinner(label=f"{Fore.YELLOW}Starting {self.threads_count} threads{Fore.RESET}", total=100) as spinner:
             for index, thread in enumerate(self.threads):
                 thread.start()
                 spinner.step(100 / len(self.threads) * (index + 1))
@@ -91,7 +94,7 @@ class AttackMethod:
             self.__RunThreads()
         except KeyboardInterrupt:
             self.is_running = False
-            print(f"{Fore.RED}[!] {Fore.MAGENTA}Ctrl+C detected. Stopping {self.threads_count} threads..{Fore.RESET}")
+            print(f"\n{Fore.RED}[!] {Fore.MAGENTA}Ctrl+C detected. Stopping {self.threads_count} threads..{Fore.RESET}")
             # Wait all threads for stop
             for thread in self.threads:
                 thread.join()
