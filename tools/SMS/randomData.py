@@ -11,7 +11,7 @@ mails = (
     "yandex.com",
     "yandex.ua",
     "yandex.ru",
-    "gmail.com"
+    "gmail.com",
 )
 
 
@@ -19,15 +19,17 @@ mails = (
 def random_service(list):
     return random.choice(list)
 
+
 # Create random name
 def random_name():
-    with open("tools/SMS/names.json", 'r') as names:
+    with open("tools/SMS/names.json", "r") as names:
         names = json.load(names)["names"]
     return random.choice(names)
 
+
 # Create random suffix for email
 # %random_name%SUFFIX@%random_email%
-def random_suffix(int_range = 4):
+def random_suffix(int_range=4):
     numbers = []
     for _ in range(int_range):
         numbers.append(str(random.randint(1, 9)))
@@ -39,20 +41,22 @@ def random_suffix(int_range = 4):
 def random_email():
     return random_name() + random_suffix() + "@" + random.choice(mails)
 
+
 # Create random password
 # %random_name%%random_suffix%
 def random_password():
-    return random_name() + random_suffix(int_range = 10)
+    return random_name() + random_suffix(int_range=10)
 
 
 # Create random token
 # %token%
 def random_token():
     letters = string.ascii_letters + string.digits
-    return ''.join(random.choice(letters) for _ in range(random.randint(20, 50)))
+    return "".join(random.choice(letters) for _ in range(random.randint(20, 50)))
+
 
 # Get random user agent
 def random_useragent():
-    with open("tools/SMS/user_agents.json", 'r') as agents:
+    with open("tools/SMS/user_agents.json", "r") as agents:
         user_agents = json.load(agents)["agents"]
     return random.choice(user_agents)

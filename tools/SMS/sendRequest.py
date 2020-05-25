@@ -1,4 +1,3 @@
-
 # Import modules
 import json
 import requests
@@ -7,24 +6,39 @@ import tools.SMS.randomData as randomData
 
 
 # Read services file
-def getServices(file='tools/SMS/services.json'):
-    with open(file, 'r') as services:
+def getServices(file="tools/SMS/services.json"):
+    with open(file, "r") as services:
         return json.load(services)["services"]
 
+
 # Read proxy list
-def getProxys(file='tools/SMS/proxy.json'):
-    with open(file, 'r') as proxys:
+def getProxys(file="tools/SMS/proxy.json"):
+    with open(file, "r") as proxys:
         return json.load(proxys)["proxy"]
+
 
 # Get domain by big url
 def getDomain(url):
-    return url.split('/')[2]
+    return url.split("/")[2]
+
 
 # Make for other services
 def transformPhone(phone, i):
     # Pizzahut
     if i == 5:
-        return '+' + phone[0] + ' (' + phone[1:4] + ') ' + phone[4:7] + ' ' + phone[7:9] + ' ' + phone[9:11] # '+7 (915) 350 99 08'
+        return (
+            "+"
+            + phone[0]
+            + " ("
+            + phone[1:4]
+            + ") "
+            + phone[4:7]
+            + " "
+            + phone[7:9]
+            + " "
+            + phone[9:11]
+        )  # '+7 (915) 350 99 08'
+
 
 # Headers for request
 headers = {
@@ -33,7 +47,7 @@ headers = {
     "Pragma": "no-cache",
     "Cache-Control": "no-cache",
     "Accept-Encoding": "gzip, deflate, br",
-    "User-agent": randomData.random_useragent()
+    "User-agent": randomData.random_useragent(),
 }
 
 # Service class
@@ -61,13 +75,13 @@ class Service:
             dataType = "url"
         # Replace %phone%, etc.. to data
         for old, new in {
-            "\'": "\"",
+            "'": '"',
             "%phone%": phone,
             "%phone5%": transformPhone(phone, 5),
             "%name%": randomData.random_name(),
             "%email%": randomData.random_email(),
             "%password%": randomData.random_password(),
-            "%token%": randomData.random_token()
+            "%token%": randomData.random_token(),
         }.items():
             if old in payload:
                 payload = payload.replace(old, new)
@@ -81,7 +95,7 @@ class Service:
         # Add custom headers
         if "headers" in self.service:
             customHeaders = self.service["headers"]
-            for key, value in json.loads(customHeaders.replace("\'", "\"")).items():
+            for key, value in json.loads(customHeaders.replace("'", '"')).items():
                 headers[key] = value
 
         # Create suffixes

