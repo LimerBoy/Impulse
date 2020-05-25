@@ -1,4 +1,3 @@
-
 # Import modules
 import os
 import sys
@@ -7,6 +6,8 @@ from time import ctime
 from colorama import Fore
 
 """ This function will stop the program when a critical error occurs """
+
+
 def CriticalError(message, error):
     message = f"""
     {Fore.RED}:=== Critical error:

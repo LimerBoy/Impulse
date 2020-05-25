@@ -1,4 +1,3 @@
-
 # Created by LimerBoy
 # Import modules
 import os
@@ -20,24 +19,24 @@ except ImportError as err:
 
 # Parse args
 parser = argparse.ArgumentParser(description="Denial-of-service ToolKit")
-parser.add_argument("--target",
-                    type=str,
-                    metavar="<IP:PORT, URL, PHONE>",
-                    help="Target ip:port, url or phone")
-parser.add_argument("--method",
-                    type=str,
-                    metavar="<SMS/NTP/UDP/SYN/ICMP/POD/SLOWLORIS/MEMCACHED/HTTP>",
-                    help="Attack method")
-parser.add_argument("--time",
-                    type=int,
-                    default=10,
-                    metavar="<time>",
-                    help='time in secounds')
-parser.add_argument("--threads",
-                    type=int,
-                    default=3,
-                    metavar="<threads>",
-                    help="threads count (1-200)")
+parser.add_argument(
+    "--target",
+    type=str,
+    metavar="<IP:PORT, URL, PHONE>",
+    help="Target ip:port, url or phone",
+)
+parser.add_argument(
+    "--method",
+    type=str,
+    metavar="<SMS/NTP/UDP/SYN/ICMP/POD/SLOWLORIS/MEMCACHED/HTTP>",
+    help="Attack method",
+)
+parser.add_argument(
+    "--time", type=int, default=10, metavar="<time>", help="time in secounds"
+)
+parser.add_argument(
+    "--threads", type=int, default=3, metavar="<threads>", help="threads count (1-200)"
+)
 
 # Get args
 args = parser.parse_args()
@@ -47,12 +46,14 @@ method = str(args.method).upper()
 target = args.target
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Print help
     if not method or not target or not time:
         parser.print_help()
         sys.exit(1)
 
     # Run ddos attack
-    with AttackMethod(duration=time, name=method, threads=threads, target=target) as Flood:
+    with AttackMethod(
+        duration=time, name=method, threads=threads, target=target
+    ) as Flood:
         Flood.Start()
