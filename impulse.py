@@ -26,7 +26,7 @@ parser.add_argument("--target",
                     help="Target ip:port, url or phone")
 parser.add_argument("--method",
                     type=str,
-                    metavar="<SMS/NTP/UDP/SYN/POD/SLOWLORIS/MEMCACHED/HTTP>",
+                    metavar="<SMS/NTP/UDP/SYN/ICMP/POD/SLOWLORIS/MEMCACHED/HTTP>",
                     help="Attack method")
 parser.add_argument("--time",
                     type=int,
