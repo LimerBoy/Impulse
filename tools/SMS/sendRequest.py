@@ -7,7 +7,7 @@ import tools.SMS.randomData as randomData
 
 # Read services file
 def getServices(file="tools/SMS/services.json"):
-    with open(file, "r") as services:
+    with open(file, "r", encoding="utf-8", errors="ignore") as services:
         return json.load(services)["services"]
 
 
