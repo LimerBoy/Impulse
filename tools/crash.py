@@ -9,7 +9,7 @@ from colorama import Fore
 
 
 def CriticalError(message, error):
-    message = f"""
+    print(f"""
     {Fore.RED}:=== Critical error:
     {Fore.MAGENTA}MESSAGE: {message}.
     {Fore.MAGENTA}ERROR: {error}
@@ -31,6 +31,5 @@ def CriticalError(message, error):
     {Fore.RED}:=== Report:
     {Fore.MAGENTA}Please report it here: https://github.com/LimerBoy/Impulse/issues/new
     {Fore.RESET}
-    """
-    print(message)
+    """)
     sys.exit(5)
