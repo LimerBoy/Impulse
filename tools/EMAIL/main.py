@@ -20,7 +20,7 @@ def flood(target):
     msg = f"From: {username}\nSubject: {subject}\n{body}"
     # Send email
     try:
-        server.sendmail(username, target, msg)
+        server.sendmail(username, target, msg.encode("utf-8"))
     except Exception as err:
         print(
             f"{Fore.MAGENTA}Error while sending mail\n{Fore.MAGENTA}{err}{Fore.RESET}"
