@@ -1,12 +1,16 @@
 {
 	"services": [
-        {
-            "url": "https://my.telegram.org/auth/send_password",
-            "data": "{'phone':'+%phone%'}"
-        },
+                {
+                       "url": "https://my.telegram.org/auth/send_password",
+                       "data": "{'phone':'+%phone%'}"
+                },
 		{
 			"url": "https://pizzahut.ru/account/password-reset",
 			"data": "{'reset_by':'phone', 'action_id':'pass-recovery', 'phone': '%phone5%', '_token':'*'}"
+		},
+		{
+                        "url": "https://mobile-api.qiwi.com/oauth/authorize",
+                        "data": "{'response_type': 'urn:qiwi:oauth:response-type:confirmation-id', 'username': '%phone%', 'client_id': 'android-qw', 'client_secret': 'zAm4FKq9UnSe7id'}"
 		},
 		{
 			"url": "https://www.rabota.ru/remind",
