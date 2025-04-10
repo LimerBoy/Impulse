@@ -58,7 +58,7 @@
 </p>
 
 # :moneybag: Donate:
-**BTC:** `1GvEsEEdD8kfbSia6QR3Hk1G4fzy2mwZE4`  
-**ETH:** `0x4f62ce9632efF28f175aAAdd58B14A0AC053A952`  
-**XMR:** `487sRQv2gBXHVPc59Lkz5j7bgJ28Qy8nPW6hUvRyFWxM84cWzEnmVcWf6MWEQ59BwrP4viyoz6gfqhDPb1yiUx2SUViKVwd`  
-
+* BTC - `bc1q3m8t7shcge2smsxwm2fnwlet3j8km9q6jeqw0l`
+* LTC - `LMcv6gt2YHDFR6t4Mb8SimKL4BsRzUpzKS`
+* TRX - `TCEo2JkogrpMkQUvEDZs2UhtYi7YgYbrV3`
+* ETH - `0xbf7DaCaa1b96d3B61A92418C09910EEAe1bb3C13`
